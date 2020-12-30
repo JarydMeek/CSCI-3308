@@ -1,0 +1,17 @@
+There were some problems with this exam.
+
+I had Set C. For set C you gave us an API that doesn't support https connections but then told us that we had to use https on Heroku. That doesn't work.
+
+My code is uploaded to Heroku and as far as I know works other than this. There is just no way to pull data from the API I was given on Heroku. Heroku doesn't support http connections,
+the API I was given doesn't support https connections.
+
+So, my code is all there, but it doesn't work on Heroku. It works fine on local.
+
+Inside my zip, you will see a folder with screenshots of each page. If you run the code, it works perfectly, but I was told in the Zoom help call to just take screenshots and submit those.
+
+The fact that this is a problem I have to experience on the FINAL EXAM for a class is unacceptable.
+I spend roughly 2-hours trying to troubleshoot this on top of the time it took me to write the FULLY FUNCTIONING CODE.
+
+These concerns are not alleviated by the fact that you eventually changed the instructions. The fact that you posted instructions you haven't fully tested on a final exam is unacceptable.
+
+Anyways, Here's a link to my (partially working) Heroku - https://csci-3308-final-fall2020.herokuapp.com/

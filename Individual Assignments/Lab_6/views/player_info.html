@@ -1,0 +1,100 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>2020 Player Info</title>
+	<link rel='icon' href='../resources/img/favicon.ico' type='image/x-icon'/>
+    <!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link href="../resources/css/my_style.css" rel="stylesheet">
+  </head>
+  <body onload="loadPlayersPage()">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <a class="navbar-brand" href="home.html">
+		<img class="rounded-circle" src="../resources/img/cu_boulder_logo.jpg" alt="CU Boulder Logo" width="30" height="30">
+	  </a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarText">
+		<ul class="navbar-nav mr-auto">
+		 <li class="nav-item">
+			<a class="nav-link" href="home.html">Home</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="team_stats.html">Season Stats <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item active">
+			<a class="nav-link" href="player_info.html">Player Information</a>
+		  </li>
+		</ul>
+		<div class="form-inline my-2 my-lg-0">
+			<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Logout</button>
+		</div>
+	  </div>
+	</nav>
+	<div class="container">
+		<br>
+		<div class="row">
+			<div class="col-4">
+				<div class="card">
+					<!-- Image Sources:
+						Player 1: https://pixels.com/featured/american-football-running-back-ball-cartoon-aloysius-patrimonio.html
+						Player 2: https://www.vectorstock.com/royalty-free-vector/american-football-wide-receiver-running-ball-vector-1878129
+						Player 3: https://www.lequzhai.com/group/how-to-draw-a-cartoon-football-player/
+						Player 4: https://www.istockphoto.com/vector/tailback-football-player-running-gm156612456-9373424
+						-->
+				  <img class="card-img-top" id="player_img" src="../resources/img/helmet.jpg" alt="Placeholder for football player image - Football Helmet">
+				  <div class="card-body mx-auto">
+					<div class="dropdown">
+					  <button class="btn btn-secondary dropdown-toggle" type="button" id="selectPlayerButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Select a Player
+					  </button>
+					  <div id="player_selector" class="dropdown-menu" aria-labelledby="selectPlayerButton">
+					  </div>
+					</div>
+				  </div>
+				</div>
+			</div>
+			<div class="col-8">
+				<div class="table-responsive">
+					<table class="table">
+						<tr>
+							<th>Year</th>
+							<td><span id="p_year"></span></td>
+						</tr>
+						<tr>
+							<th>Major</th>
+							<td><span id="p_major"></span></td>
+						</tr>
+						<tr>
+							<th>Games Played</th>
+							<td><span id="g_played"></span> </td>
+						</tr>
+						<tr>
+							<td>Passing Yards: <span id="p_yards"> </span></td>
+							<td>Avg. Passing Yards: <span id="avg_p_yards"> </span></td>
+						</tr>
+						<tr>
+							<td>Rushing Yards: <span id="r_yards"> </span></td>
+							<td>Avg. Rushing Yards: <span id="avg_r_yards"> </span></td>
+						</tr>
+						<tr>
+							<td>Receiving Yards: <span id="rec_yards"> </span></td>
+							<td>Avg. Receiving Yards: <span id="avg_rec_yards"> </span></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<script src="../resources/js/my_scripts.js"></script>
+	</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url('https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+    <title>Profile</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #3B0D84;">
+        <div>
+            <ul class="navbar-nav" method="POST">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('Profile') }}">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('AddRoute') }}">Add Route</a>
+                </li>
+                <!--<li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('NewAccount') }}">Create Account</a>
+                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('Leaderboard') }}">Leaderboard</a>
+                </li>
+            </ul>
+        </div>
+        <div class="justify-content-end ml-auto">
+            <ul class="navbar-nav" method="POST" action="/Logout">
+                <li class="nav-item">
+                    <button type="submit" onclick="window.location.href='/Logout'" class="btn btn-dark" style="background-color: #3B0D84; border-color: white;">Logout</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-6 border rounded" style="padding-top: 20px; padding-bottom: 20px; background-color: white;">
+                <h2 style="text-align:center;">Profile</h2>
+
+                <div class="container">
+                    <table class="table table-light">
+                        <tr>
+                            <th style="text-align: center;">Username</th><td>{{puser}}</td>
+                        </tr>
+                        <tr>
+                            <th style="text-align: center;">Email</th><td>{{pemail}}</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h6 style="text-align:center; padding-bottom: 5px;"><b>Routes</b></h6>
+                <div class="row">
+                    <div class="col"></div>
+                        <div class="col-2 border rounded" style="padding: 10px; text-align: center; background-color: white;">
+                            <th><b>Distance Ran</b></th>
+                        </div>
+                        <div class="col-2 border rounded" style="padding: 10px; text-align: center; background-color: white;">
+                            <th><b>Route Rating</b></th>
+                        </div>
+                        <div class="col-5 border rounded" style="padding: 10px; text-align: center; background-color: white;">
+                            <th><b>About Route</b></th>
+                        </div>
+                    <div class="col"></div>
+                </div>
+
+                {% for x in routesran %}
+                <div class="row">
+                    <div class="col"></div>
+                        <div class="col-2 border rounded" style="padding: 10px; text-align: center; background-color: white;">
+                            <td>{{x.distance}}</td>
+                        </div>
+                        <div class="col-2 border rounded" style="padding: 10px; text-align: center; background-color: white;">
+                            <th>{{x.rate}}</th>
+                        </div>
+                        <div class="col-5 border rounded" style="padding: 10px; text-align: center; background-color: white;">
+                            <th>{{x.about}}</th>
+                        </div>
+                    <div class="col"></div>
+                </div>
+                {% endfor %}
+
+            </div>
+            <div class="col"></div>
+        </div> 
+
+        
+
+    </div>
+    <br>
+</body>

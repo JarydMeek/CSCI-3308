@@ -1,0 +1,60 @@
+<%- include('../partials/header') %>
+<%- include('../partials/menu') %>
+	<div class="container">
+		<br>
+		<div class="jumbotron">
+		  <h1 class="display-4">Fall 2018 Stats</h1>
+		  <p class="lead">Detailed information on how the Buffs are doing in the 2018 Football Season!</p>
+		</div>
+
+
+		<table class="table table-bordered" id="stats_table">
+			<tr>
+				<th class="align-bottom" rowspan="2">Game Date</th>
+				<th class="align-bottom"rowspan="2">Opposing Team Name</th>
+				<th class="text-center" colspan="2">Score</th>
+				<th class="align-bottom" rowspan="2">Winner</th>
+			</tr>
+			<tr>
+				<th>Home Score</th>
+				<th>Opp. Score</th>
+			</tr>
+			<!-- TODO: Iterate over the Football_table data here 
+						1. Display the information for each row (date, name, home score, visitor score)
+						2. Determine who the winner is and display it in the final column
+
+						If you're not sure how the logic should work here, review the code you add to the client-side javascript
+						that ran onload for Lab 5.  We are doing the same kind of operations we had in Lab 5, but we are instead having
+						everything handled via server-side scriptes
+			-->
+					<%
+					if (data) {
+						var rows = '';
+						var counter = 0;
+						data.forEach(function(game){
+							   rows +='<tr><td>' + betterDate[counter].date + '</td><td>' + game.visitor_name + '</td><td>' + game.home_score + '</td><td>' + game.visitor_score + '</td><td>' + winner[counter] + '</td></tr>';
+							   counter++;
+						   }); 
+						%>
+						<%- rows %>
+					<%}%>
+			
+		</table>
+		<br>
+		<table class="table text-center">
+			<tr>
+				<th>Wins</th>
+				<th>Losses</th>
+			</tr>
+			<tr>
+				 <!-- TODO: Display the total number of wins here.  
+							This value should come from your server.js files query, don't calculate it in this file! -->
+				<td><%- wins %></td>
+				 <!-- TODO: Display the total number of losses here.  
+							This value should come from your server.js files query, don't calculate it in this file! --></td>
+				<td><%- losses %></td>
+			</tr>
+		</table>
+		
+	</div>
+<%- include('../partials/footer') %>

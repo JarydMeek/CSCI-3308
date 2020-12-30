@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url('https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+    <title>Login</title>
+</head>
+<body>
+
+<!--    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <div>
+            <ul class="navbar-nav" method="POST">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('AddRoute') }}">Add Route</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('NewAccount') }}">Create Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('Leaderboard') }}">Leaderboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('Profile') }}">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('Logout') }}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav> -->
+
+
+
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <span class="col-6 border rounded" style="padding: 20px; background-color: white;">
+                <h2 style="text-align:center">Login</h2>
+                {% for message in get_flashed_messages() %}
+                    <h6 style="color:red">{{ message }}</h6>
+                {% endfor %}
+                <form method="POST" action="/" class="login" name="loginform">
+                    <div>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="userin" placeholder="Username" required="required">
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="passin" id="password" placeholder="Password" required="required">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-dark" style="background-color: #3B0D84;">Submit</button>
+                        <br>
+                        <!--<input type="text" placeholder="Example input">
+                        <span class="input-group-btn">
+                        <button class="btn btn-primary">Download</button>
+                    </span>-->
+                    </div>
+                </form>
+                <p></p>
+                <p>Need an account?</p>
+                <form method="POST" action="/NewAccount" class="NewAccount" name="NewAccount">
+                    <button type="submit" class="btn btn-dark" style="background-color: #3B0D84;">Create Account</button>
+                </form>
+            </span>
+            <div class="col"></div>
+        </div>
+    </div>
+    <br>
+</body>

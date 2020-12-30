@@ -1,0 +1,104 @@
+<% include ../partials/header %>
+<% include ../partials/menu %>
+	<div class="container">
+		<br>
+		<div class="row">
+			<div class="col-4">
+				<div class="card">
+					<!-- Image Sources:
+						Player 1: https://pixels.com/featured/american-football-running-back-ball-cartoon-aloysius-patrimonio.html 
+						Player 2: https://www.vectorstock.com/royalty-free-vector/american-football-wide-receiver-running-ball-vector-1878129
+						Player 3: https://www.lequzhai.com/group/how-to-draw-a-cartoon-football-player/
+						Player 4: https://www.istockphoto.com/vector/tailback-football-player-running-gm156612456-9373424
+						-->
+				  <% 
+				  var image_src = '../resources/img/helmet.jpg';
+				  if(player_info){ 
+						image_src = player_info.img_src;
+				   } 
+				  %>
+				 <img class="card-img-top" id="player_img" src= "<%- image_src %>" alt="Image of Football Player">
+				  <div class="card-body mx-auto">
+					<form class="form"action="/player_info/get_player" method="get">
+						<select class="custom-select" name="player_choice" onchange="this.form.submit()">
+							 <option selected>Select Player</option>
+							 <% if (players) { 
+									var player_options = '';
+					 				players.forEach(function(item){
+					 					player_options += '<option value="' + item.id + '">' + item.name + '</option>'; 
+				 					}); %>
+				 					<%- player_options %>
+				 			 <% }%>
+						</select>
+					</form>
+				  </div>
+				</div>
+			</div>
+			<div class="col-8">
+				<div class="table-responsive">
+					<table class="table">
+						<tr>
+							<th>Year</th>
+							<td><% if(player_info){ %>
+									<%- player_info.year%>
+								<% } %>
+							</td>
+						</tr>
+						<tr>
+							<th>Major</th>
+							<td><% if(player_info){ %>
+									<%- player_info.major%>
+								<% } %>
+							</td>
+						</tr>
+						<tr>
+							<th>Games Played</th>
+							<td><% if(games_played){ %>
+									<%- games_played %>
+								<% } %>
+							</td>
+						</tr>
+						<tr>
+							<td>Passing Yards: 
+								<% if(player_info){ %>
+									<%- player_info.passing_yards%>
+								<% } %>
+							</td>
+							<td>Avg. Passing Yards: 
+								<% if(player_info){ %>
+									<%- Math.round(player_info.passing_yards / games_played) %>
+								<% } %>
+							</td>
+						</tr>
+						<tr>
+							<td>Rushing Yards: 
+								<% if(player_info){ %>
+									<%- player_info.rushing_yards %>
+								<% } %>
+
+							</td>
+							<td>Avg. Rushing Yards: 
+								<% if(player_info){ %>
+									<%- Math.round(player_info.rushing_yards / games_played) %>
+								<% } %>
+							</td>
+						</tr>
+						<tr>
+							<td>Receiving Yards: 
+								<% if(player_info){ %>
+									<%- player_info.receiving_yards %>
+								<% } %>
+							</td>
+							<td>Avg. Receiving Yards: 
+								<% if(player_info){ %>
+									<%- Math.round(player_info.receiving_yards / games_played) %>
+								<% } %>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+  
+<% include ../partials/footer %>

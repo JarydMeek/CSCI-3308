@@ -1,0 +1,15 @@
+#thermometer_inner { width: 95%; height: 20%; margin:2.5%; background: red; position:absolute; bottom:10%;}
+#thermometer_outer {height:400px; position:relative;}
+#temp_today { color:white; text-align:center; position:relative; top:0%; }
+body{
+/*image sourced from https://www.google.com/url?sa=i&url=https%3A%2F%2Fopenweathermap.org%2F&psig=AOvVaw20P3Gfg93XrGNztO2nPhr0&ust=1585803443098000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMDXlKq4xugCFQAAAAAdAAAAABAD*/
+background-image: url('../img/weather.png');
+background-repeat: no-repeat;
+background-size: cover;
+}
+.container{
+/* margin-top: 2%; */
+padding:2%;
+opacity: 0.9;
+background: #FFFFFF;
+}
