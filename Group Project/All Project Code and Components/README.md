@@ -1,7 +1,7 @@
 # Pathfinder
 ***Database is now offline.***
 
-Code for Pathfinder - A SwiftUI run-tracking application for ios devices. 
+Code for Pathfinder - A SwiftUI run-tracking application for IOS devices. 
 
 Completed as a group project for CSCI 3308
 
