@@ -5,7 +5,7 @@ Code for Pathfinder - A SwiftUI run-tracking application for ios devices.
 
 Completed as a group project for CSCI 3308
 
-Teammates and contributions-
-IOS App - Jaryd Meek
-Integration Layer (PyFlask) - Emily Parker, Jaryd Meek
+*Teammates and contributions-*<br>
+IOS App - Jaryd Meek<br>
+Integration Layer (PyFlask) - Emily Parker, Jaryd Meek<br>
 Website - Elena Smith
